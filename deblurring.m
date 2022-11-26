@@ -1,5 +1,7 @@
 %% Master Function
-I = imread("peppers.png");
+Im = imread("image_5.tif");
+kernel = ones(5, 5)/(5*5);
+I = imfilter(Im, kernel);
 scale = 1/4;
 [hpsf, cest, alphest] = blur_kernel_estimation(I, scale);
 [deblurring_kernel] = deblur_kernel_estimation(hpsf);
